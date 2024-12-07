@@ -43,7 +43,7 @@ def base64_to_image(image: Image):
 @app.post("/process-image/")
 async def process_image(images: List[Image]):
     for image in images:
-        print(image.image_name)
+        print(f"{image.image_name} = {len(image.image_data)} bytes")
         base64_to_image(image)
 
     return {"Image processing complete"}
